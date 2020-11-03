@@ -2,6 +2,7 @@ package ie.ucc.bis.is4447.mylistviewapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,12 +38,25 @@ public class MainActivity extends AppCompatActivity {
         ItemAdapter itemAdapter = new ItemAdapter(this, items,prices,descriptions);
         lvMyListView.setAdapter(itemAdapter);
 
+        /*
         lvMyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
                 Toast.makeText(MainActivity.this,"Clicked at" + items[i], Toast.LENGTH_LONG).show();
             }
         });
+        */
+
+
+        lvMyListView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent startIntent = new Intent(getApplicationContext(),DetailActivity.class);
+            startIntent.putExtra("Item_Index", i);
+
+            Log.d(TAG, "Item index:" + i);
+
+            startActivity(startIntent);
+        });
+
 
     }
 }
