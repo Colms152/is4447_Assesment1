@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyListView App</string>
+
+    <!--MyListViewData-->
+    <string-array name="items">
+        <item>Apple</item>
+        <item>Orange</item>
+        <item>Banana</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>$0.89</item>
+        <item>$1.20</item>
+        <item>$0.99</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Fresh Apples from The UK</item>
+        <item>Fresh Oranges from The Spain</item>
+        <item>Fresh Bananas from The Brazil</item>
+
+    </string-array>
+
+
+</resources>
