@@ -4,59 +4,52 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    ListView lvMyListView;
-    String[] items, prices, descriptions;
-
-    //TAG for log
-    private static final String TAG = "***IS4447****";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Resources res = getResources();
+        Button btnSecondActivity = (Button) findViewById(R.id.btnSecondActivity);
+        Button btnGoogle = (Button) findViewById(R.id.btnGoogle);
 
-        lvMyListView = (ListView) findViewById(R.id.lvMyListView);
-
-        items = res.getStringArray(R.array.items);
-        prices = res.getStringArray(R.array.prices);
-        descriptions = res.getStringArray(R.array.descriptions);
-
-        Log.d(TAG,items.toString());
-
-        ItemAdapter itemAdapter = new ItemAdapter(this, items,prices,descriptions);
-        lvMyListView.setAdapter(itemAdapter);
-
-        /*
-        lvMyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //launch an activity within our app
+        btnSecondActivity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Toast.makeText(MainActivity.this,"Clicked at" + items[i], Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), ListviewActivity.class);
+                startIntent.putExtra("PASSINGSOMETHING", "hello world !!");
+                startActivity(startIntent);
+            }
+
+        });
+
+        //launch an activity outside our app
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String google = "https://www.google.com";
+                Uri webaddress = Uri.parse(google);
+
+
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+
+                if(gotoGoogle.resolveActivity(getPackageManager()) != null){
+                    startActivity(gotoGoogle);
+                }
             }
         });
-        */
-
-
-        lvMyListView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent startIntent = new Intent(getApplicationContext(),DetailActivity.class);
-            startIntent.putExtra("Item_Index", i);
-
-            Log.d(TAG, "Item index:" + i);
-
-            startActivity(startIntent);
-        });
-
 
     }
 }

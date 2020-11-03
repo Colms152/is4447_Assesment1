@@ -2,6 +2,8 @@
     <string name="app_name">MyListView App</string>
     <string name="image">Image</string>
     <string name="item_img">Item_IMG</string>
+    <string name="second_activity">List View + Photos</string>
+    <string name="google_search">Calculator</string>
 
     <!--MyListViewData-->
     <string-array name="items">

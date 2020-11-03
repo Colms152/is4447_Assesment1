@@ -34,8 +34,8 @@ public class DetailActivity extends AppCompatActivity {
     private int getImage(int index){
         switch (index){
             case 0: return  R.drawable.apple;
-            case 1: return  R.drawable.banana;
-            case 2: return  R.drawable.orange;
+            case 1: return  R.drawable.orange;
+            case 2: return  R.drawable.banana;
             default: return -1;
         }
     }
