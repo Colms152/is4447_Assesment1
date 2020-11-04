@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnSecondActivity = (Button) findViewById(R.id.btnSecondActivity);
         Button btnMath = (Button) findViewById(R.id.btnMath);
         Button btnGoogle = (Button) findViewById(R.id.btnGoogle);
+        Button btnTemp = (Button) findViewById(R.id.btnTemp);
 
         //launch an activity within our app
         btnSecondActivity.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent gotoMath = new Intent(getApplicationContext(), MathActivity.class);
                 startActivity(gotoMath);
+            }
+
+        });
+
+        btnTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gotoTemp = new Intent(getApplicationContext(), TemperatureActivity.class);
+                startActivity(gotoTemp);
             }
 
         });

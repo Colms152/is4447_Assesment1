@@ -5,6 +5,7 @@
     <string name="second_activity">List View + Photos</string>
     <string name="google_search">Googgle Search</string>
     <string name="calculator">Calculator</string>
+    <string name="temperature_converter">Temperature Converter</string>
 
     <!--MyListViewData-->
     <string-array name="items">
@@ -24,6 +25,17 @@
         <item>Fresh Oranges from The Spain</item>
         <item>Fresh Bananas from The Brazil</item>
 
+    </string-array>
+
+
+    <string name="result">Result</string>
+    <string name="enter_temperature">Enter Temperature</string>
+
+
+    <string-array name="Temperature_Type">
+        <item>Please Select</item>
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
     </string-array>
 
 
