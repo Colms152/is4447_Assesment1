@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btnSecondActivity = (Button) findViewById(R.id.btnSecondActivity);
+        Button btnMath = (Button) findViewById(R.id.btnMath);
         Button btnGoogle = (Button) findViewById(R.id.btnGoogle);
 
         //launch an activity within our app
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent startIntent = new Intent(getApplicationContext(), ListviewActivity.class);
                 startIntent.putExtra("PASSINGSOMETHING", "hello world !!");
                 startActivity(startIntent);
+            }
+
+        });
+
+        btnMath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gotoMath = new Intent(getApplicationContext(), MathActivity.class);
+                startActivity(gotoMath);
             }
 
         });
