@@ -1,5 +1,8 @@
 package ie.ucc.bis.is4447.mylistviewapp;
 
+//Colm Sheehan
+//Followed Temperature Example from Lectures
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
